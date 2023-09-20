@@ -54,7 +54,7 @@ int _strcmp(char *str1, char *str2)
  *
  * Return: pointer to destination buffer
  */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 {
 	char *ret = dest;
 
@@ -73,7 +73,7 @@ char *_strcat(char *dest, char *src)
  * Return: the pointer to dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
 	int i;
 
@@ -83,4 +83,31 @@ char *_strcpy(char *dest, char *src)
 	}
 	dest[i++] = '\0';
 	return (dest);
+}
+
+
+/**
+ * _strdup - function that returns pointer to a newly allocate
+ * @str: input string
+ *
+ * Return: pointer to a newly allocated space in memory
+ */
+
+char *_strdup(char *st)
+{
+	/* initializing variables */
+	int index = 0, x = 0;
+	char *s;
+
+	if (st == NULL)
+		return (NULL);
+	while (st[index] != '\0')
+		index += 1;
+	s = malloc(sizeof(char) * (index + 1));
+	/* check for null return by malloc */
+	if (s == NULL)
+		return (NULL);
+	for (x = 0; st[x]; x += 1)
+		s[x] = st[x];
+	return (s);
 }

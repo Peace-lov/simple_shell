@@ -60,12 +60,12 @@ ssize_t read_comm(char **comm_cache, size_t *comm_bytes)
 }
 
 /**
- * _strlen - A function
+ * _strlen - A function that counts string lenght
  * @s: string
  * Return: (leng).
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int leng = 0;
 
