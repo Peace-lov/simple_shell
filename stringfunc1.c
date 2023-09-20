@@ -88,7 +88,7 @@ char *_strcpy(char *dest, const char *src)
 
 /**
  * _strdup - function that returns pointer to a newly allocate
- * @str: input string
+ * @st: input string
  *
  * Return: pointer to a newly allocated space in memory
  */
