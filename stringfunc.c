@@ -54,7 +54,7 @@ int prep_com_args(char *com_cache, char **args)
 
 ssize_t read_comm(char **comm_cache, size_t *comm_bytes)
 {
-	ssize_t command = _getline(comm_cache, comm_bytes, stdin);
+	ssize_t command = getline(comm_cache, comm_bytes, stdin);
 
 	return (command);
 }
