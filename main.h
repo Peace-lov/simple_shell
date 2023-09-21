@@ -44,7 +44,6 @@ char *find_com(char *command, char *path);
 int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strcat(char *dest, const char *src);
 char *_strdup(char *st);
-char *_strstr(char *shore, char *sand);
 
 /* Define MACROS */
 #define PROMPT_SIZE 2

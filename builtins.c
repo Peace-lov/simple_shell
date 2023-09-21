@@ -138,27 +138,3 @@ int _setenv2(const char *n, const char *v, int ov)
 	environ = new_environ;
 	return (0);
 }
-
-
-#include "main.h"
-
-/**
- * _strstr - function that locates a substring
- * @shore: input string
- * @sand: substring to compare
- *
- * Return: pointer to s (Succes!), else NULL
- */
-char *_strstr(char *shore, char *sand)
-{
-	for (; *shore != '\0'; shore += 1)
-	{
-		char *hay = shore, *n = sand;
-
-		while (*hay == *n && *n != '\0')
-			n += 1, hay += 1;
-		if (*n == '\0')
-			return (shore);
-	}
-	return (0);
-}

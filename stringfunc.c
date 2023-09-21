@@ -11,7 +11,7 @@ char *check_exec(char *com_cache)
 {
 	char *delim = " ";
 
-	return (_strtok(com_cache, delim));
+	return (strtok(com_cache, delim));
 }
 
 
@@ -29,11 +29,11 @@ int prep_com_args(char *com_cache, char **args)
 	char *token;
 	int arg_index = 0;
 
-	token = _strtok(com_cache, delim);
+	token = strtok(com_cache, delim);
 	while (token != NULL)
 	{
 		args[arg_index++] = token;
-		token = _strtok(NULL, delim);
+		token = strtok(NULL, delim);
 
 		if (arg_index >= MAX_ARGUMENTS - 1)
 		{

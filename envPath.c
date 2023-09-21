@@ -47,7 +47,7 @@ char *find_com(char *command, char *path)
 		else
 			return (NULL);
 	}
-	token = _strtok(path, delim);
+	token = strtok(path, delim);
 	while (token != NULL)
 	{
 /*		t_len = strlen(token) + strlen(command) + 2; */
@@ -72,7 +72,7 @@ char *find_com(char *command, char *path)
 			break;
 		}
 		free(temp);
-		token = _strtok(NULL, delim);
+		token = strtok(NULL, delim);
 	}
 	return (executable);
 }
@@ -135,15 +135,10 @@ int exe_command(char *comm_cache)
 {
 	char *args[MAX_ARGUMENTS], *executable;
 	pid_t pid;
-	int result, indx;
+	int result;
 
 	if (prep_com_args(comm_cache, args) == -1)
 		return (-1);
-	for (indx = 0; args[indx] != NULL; indx += 1)
-	{
-		if (_strstr(args[indx], "#") != NULL)
-			return (0);
-	}
 	if (_strcmp(args[0], "env") == 0)
 		return (env_print());
 	if (_strcmp(args[0], "cd") == 0)
