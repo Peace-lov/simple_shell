@@ -10,12 +10,12 @@
 
 int main(int ar_c, char *ar_v[])
 {
-	char *pmt = "$ ", *c_cache = NULL;
+	char *pmt = "$ ", *c_cache = NULL; /* declaring variable */
 	size_t c_bytes = 0;
 	ssize_t command;
 	int result;
 
-	setenv("PATH", "/bin:/usr/bin:/usr/local/bin", 1);
+	setenv("PATH", "/bin:/usr/bin:/usr/local/bin", 1); /* setting the path env */
 	if (ar_c > 1)
 		return (exe_command(ar_v[1]));
 	while (1)
