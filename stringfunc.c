@@ -11,7 +11,7 @@ char *check_exec(char *com_cache)
 {
 	char *delim = " ";
 
-	return (strtok(com_cache, delim));
+	return (_strtok(com_cache, delim));
 }
 
 
@@ -29,11 +29,11 @@ int prep_com_args(char *com_cache, char **args)
 	char *token;
 	int arg_index = 0;
 
-	token = strtok(com_cache, delim);
+	token = _strtok(com_cache, delim);
 	while (token != NULL)
 	{
 		args[arg_index++] = token;
-		token = strtok(NULL, delim);
+		token = _strtok(NULL, delim);
 
 		if (arg_index >= MAX_ARGUMENTS - 1)
 		{
@@ -54,7 +54,7 @@ int prep_com_args(char *com_cache, char **args)
 
 ssize_t read_comm(char **comm_cache, size_t *comm_bytes)
 {
-	ssize_t command = getline(comm_cache, comm_bytes, stdin);
+	ssize_t command = _getline(comm_cache, comm_bytes, stdin);
 
 	return (command);
 }

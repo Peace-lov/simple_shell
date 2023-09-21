@@ -25,7 +25,7 @@ int main(int ar_c, char *ar_v[])
 			write(STDOUT_FILENO, pmt, 2), command = read_comm(&c_cache, &c_bytes);
 		} else
 		{
-			if (getline(&c_cache, &c_bytes, stdin) == -1)
+			if (_getline(&c_cache, &c_bytes, stdin) == -1)
 				break;
 			command = _strlen(c_cache);
 		}

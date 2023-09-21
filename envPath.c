@@ -47,7 +47,7 @@ char *find_com(char *command, char *path)
 		else
 			return (NULL);
 	}
-	token = strtok(path, delim);
+	token = _strtok(path, delim);
 	while (token != NULL)
 	{
 /*		t_len = strlen(token) + strlen(command) + 2; */
@@ -72,7 +72,7 @@ char *find_com(char *command, char *path)
 			break;
 		}
 		free(temp);
-		token = strtok(NULL, delim);
+		token = _strtok(NULL, delim);
 	}
 	return (executable);
 }
