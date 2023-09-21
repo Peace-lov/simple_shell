@@ -135,10 +135,15 @@ int exe_command(char *comm_cache)
 {
 	char *args[MAX_ARGUMENTS], *executable;
 	pid_t pid;
-	int result;
+	int result, indx;
 
 	if (prep_com_args(comm_cache, args) == -1)
 		return (-1);
+	for (indx = 0; args[indx] != NULL; indx += 1)
+	{
+		if (_strstr(args[indx], "#") != NULL)
+			return (0);
+	}
 	if (_strcmp(args[0], "env") == 0)
 		return (env_print());
 	if (_strcmp(args[0], "cd") == 0)
