@@ -56,7 +56,7 @@ int env_print(void)
  * Return: 0 on success!
  */
 
-int _setenv(const char *n, const char *v, int ov)
+int _setenv(char *n, char *v, int ov)
 {
 	size_t n_len, v_len, env_len;
 	int i = 0;
@@ -95,7 +95,7 @@ int _setenv(const char *n, const char *v, int ov)
  * Return: 0 on success!
  */
 
-int _setenv2(const char *n, const char *v, int ov)
+int _setenv2(char *n, char *v, int ov)
 {
 	int i, env_count;
 	char *var, *new_var, **new_environ;
